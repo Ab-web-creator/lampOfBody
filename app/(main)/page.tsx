@@ -1,8 +1,8 @@
-import {PageHome} from "@/features/home/PageHome";
+import {PageAdmissions} from "@/features/home/PageAdmissions";
 
 const Home = () => {
   return (
-    <PageHome />
+    <PageAdmissions />
   );
 }
 

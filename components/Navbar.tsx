@@ -23,89 +23,72 @@ const Navbar: React.FC = () => {
 
   return (
     <section 
-      className="fixed top-0 left-0 w-full z-50 mb-5 border-b bg-blue-700 text-white"
+      className="fixed top-0 left-0 w-full z-50 mb-5 border-b bg-blue-100 text-blue-800 font-bold"
       onClick={closeDropdown}
     >
       <nav className="max-w-[1200px] mx-auto flex gap-5 justify-between px-4 py-2">
         <div className="flex gap-20">
-        <div className="flex items-center border border-green-300 rounded-sm">
+        <div className="flex items-center">
           <Image
-            src="/images/logo-with-words.png"  
+            src="/images/logo-sun.png"  
             alt="Logo"
-            width={80}  
-            height={20}  
-            className="object-contain min-w-[80px] h-auto px-2 flex-shrink-0" 
+            width={40}  
+            height={40}  
+            className="object-contain min-w-[40px] h-auto px-2 flex-shrink-0" 
           />
         </div>
 
         <div className="w-full flex gap-5 justify-center [&>*]:px-2">
+       
           <Link
             href="/"
-            className={`relative group px-3 py-1 transition-all duration-300 ${
-              pathname === "/" ? "text-white" : "text-gray-200"
+            className={`relative   group px-3 py-1 transition-all duration-300 ${
+              pathname === "/" ? "text-blue-800 font-bold" : "text-blue-400"
             }`}
           >
-            Home
-            <span 
-              className={`absolute bottom-0 left-0 w-full h-[2px] bg-blue-400 transition-all duration-300 transform rounded-full ${
+            Patients
+            <span
+              className={`absolute bottom-0 left-0 w-full h-[2px] bg-blue-500 transition-all duration-300 transform rounded-full ${
                 pathname === "/" ? "scale-x-100" : "scale-x-0"
               }`}
             ></span>
           </Link>
+      
           <Link
-            href="/courses"
-            className={`relative   group px-3 py-1 transition-all duration-300 ${
-              pathname === "/courses" ? "text-white" : "text-gray-200"
-            }`}
-          >
-            Courses
-            <span
-              className={`absolute bottom-0 left-0 w-full h-[2px] bg-blue-400 transition-all duration-300 transform rounded-full ${
-                pathname === "/courses" ? "scale-x-100" : "scale-x-0"
-              }`}
-            ></span>
-          </Link>
-          <Link
-            href="/communities"
+            href="/appointments"
             className={`relative group px-3 py-1 transition-all duration-300 ${
-              pathname === "/communities" ? "text-white" : "text-gray-200"
+              pathname === "/appointments" ? "text-blue-800 font-bold" : "text-blue-400"
             }`}
           >
-            Communities
+            Appointments
             <span
-              className={`absolute bottom-0 left-0 w-full h-[2px] bg-blue-400 transition-all duration-300 transform rounded-full ${
-                pathname === "/communities" ? "scale-x-100" : "scale-x-0"
+              className={`absolute bottom-0 left-0 w-full h-[2px] bg-blue-500 transition-all duration-300 transform rounded-full ${
+                pathname === "/appointments" ? "scale-x-100" : "scale-x-0"
               }`}
             ></span>
           </Link>
-          <Link
-            href="/discussions"
-            className={`relative group px-3 py-1 transition-all duration-300 ${
-              pathname === "/discussions" ? "text-white" : "text-gray-200"
-            }`}
-          >
-            Discussions
-            <span
-              className={`absolute bottom-0 left-0 w-full h-[2px] bg-blue-400 transition-all duration-300 transform rounded-full ${
-                pathname === "/discussions" ? "scale-x-100" : "scale-x-0"
-              }`}
-            ></span>
-          </Link>
+        
+    
+
+ 
 
           {isSignedIn && (
+            <>
+            <p className="text-blue-400">|</p>
             <Link
               href="/profile"
               className={`relative group px-3 py-1 transition-all duration-300 ${
-                pathname === "/profile" ? "text-white" : "text-gray-200"
+                pathname === "/profile" ? "text-blue-800 font-bold" : "text-blue-400"
               }`}
             >
-              Profile
+              Tasks
               <span
-                className={`absolute bottom-0 left-0 w-full h-[2px] bg-blue-400 transition-all duration-300 transform rounded-full ${
+                className={`absolute bottom-0 left-0 w-full h-[2px] bg-blue-500 transition-all duration-300 transform rounded-full ${
                   pathname === "/profile" ? "scale-x-100" : "scale-x-0"
                 }`}
               ></span>
             </Link>
+            </>
           )}
         </div>
         </div>
@@ -113,14 +96,14 @@ const Navbar: React.FC = () => {
         <div className="relative w-fit flex items-center">
           {isSignedIn ? (
             <div onClick={(e) => e.stopPropagation()}>
-              <Button variant="secondary" className="bg-transparent !p-2 !rounded-full focus:ring-white focus:ring-offset-blue-700"
+              <Button variant="primary" className="!bg-blue-300 hover:!bg-blue-500 !p-2 !rounded-full focus:ring-white focus:ring-offset-blue-700"
                onClick={toggleDropdown}
                >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-3 w-3"
                   viewBox="0 0 24 24"
-                  fill="currentColor"
+                  fill="white"
                 >
                   <path
                     fillRule="evenodd"
@@ -131,33 +114,33 @@ const Navbar: React.FC = () => {
               </Button>
 
               {showDropdown && (
-                <div className="absolute right-0 mt-5 w-48 bg-white rounded-md shadow-lg py-1 text-gray-900 z-10">
+                <div className="absolute right-0 mt-5 w-48 bg-white rounded-md shadow-lg py-1 text-gray-500 z-10">
                   <Link
                     href="/profile"
                     className="block px-4 py-2 hover:bg-blue-200"
                     onClick={toggleDropdown}
                   >
-                    {user?.firstName || "User"} (profile settings)
+                    {user?.firstName || "User"} (settings)
                   </Link>
                   <Link
                     href="/courses"
                     className="block px-4 py-2 hover:bg-blue-200"
                     onClick={toggleDropdown}
                   >
-                   My courses
+                   item
                   </Link>
                   <Link
                     href="/profile"
                     className="block px-4 py-2 hover:bg-blue-200"
                     onClick={toggleDropdown}
                   >
-                   Whatever item
+                  item
                   </Link>
 
                   <br />
 
                   <SignOutButton>
-                    <button className="block w-full text-left px-4 py-2 hover:bg-blue-200">
+                    <button className="block w-full text-left px-4 py-2 hover:bg-yellow-400">
                       Logout
                     </button>
                   </SignOutButton>
