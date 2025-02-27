@@ -30,12 +30,12 @@ const VisualAcuity: React.FC<VisualAcuityProps> = ({ setActiveComponent, data, o
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
-    setFormData(prev => ({ ...prev, [id]: value }));
+    setFormData((prev) => ({ ...prev, [id]: value }));
     onChange({ [id]: value });
   };
 
   return (
-    <div className='py-10'>
+    <div className="py-10">
       <h2 className="mb-10">Initial Checkups - done at the registry</h2>
       <form>
         <section className="space-y-10">
@@ -44,12 +44,30 @@ const VisualAcuity: React.FC<VisualAcuityProps> = ({ setActiveComponent, data, o
             <h3 className="text-lg font-semibold text-gray-600">Visual Acuity Assessment</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
               <div>
-                <label htmlFor="visualAcuityOD" className="block">Visual Acuity (RE - Right Eye)</label>
-                <input id="visualAcuityOD" type="text" placeholder="e.g., 20/20" className="w-full border p-2 rounded" value={formData.visualAcuityOD || ''} onChange={handleChange} />
+                <label htmlFor="visualAcuityOD" className="block">
+                  Visual Acuity (RE - Right Eye)
+                </label>
+                <input
+                  id="visualAcuityOD"
+                  type="text"
+                  placeholder="e.g., 20/20"
+                  className="w-full border p-2 rounded"
+                  value={formData.visualAcuityOD || ''}
+                  onChange={handleChange}
+                />
               </div>
               <div>
-                <label htmlFor="visualAcuityOS" className="block">Visual Acuity (LE - Left Eye)</label>
-                <input id="visualAcuityOS" type="text" placeholder="e.g., 20/20" className="w-full border p-2 rounded" value={formData.visualAcuityOS || ''} onChange={handleChange} />
+                <label htmlFor="visualAcuityOS" className="block">
+                  Visual Acuity (LE - Left Eye)
+                </label>
+                <input
+                  id="visualAcuityOS"
+                  type="text"
+                  placeholder="e.g., 20/20"
+                  className="w-full border p-2 rounded"
+                  value={formData.visualAcuityOS || ''}
+                  onChange={handleChange}
+                />
               </div>
             </div>
           </div>
@@ -59,24 +77,55 @@ const VisualAcuity: React.FC<VisualAcuityProps> = ({ setActiveComponent, data, o
             <h3 className="text-lg font-semibold text-gray-600">Pupillary Distance (PD)</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
               <div>
-                <label htmlFor="pdTotal" className="block">Total PD (mm)</label>
-                <input id="pdTotal" type="number" placeholder="e.g., 62" className="w-full border p-2 rounded" value={formData.pdTotal || ''} onChange={handleChange} />
+                <label htmlFor="pdTotal" className="block">
+                  Total PD (mm)
+                </label>
+                <input
+                  id="pdTotal"
+                  type="number"
+                  placeholder="e.g., 62"
+                  className="w-full border p-2 rounded"
+                  value={formData.pdTotal || ''}
+                  onChange={handleChange}
+                />
               </div>
               <div>
-                <label htmlFor="pdOD" className="block">PD (RE - Right Eye, mm)</label>
-                <input id="pdOD" type="number" placeholder="e.g., 31" className="w-full border p-2 rounded" value={formData.pdOD || ''} onChange={handleChange} />
+                <label htmlFor="pdOD" className="block">
+                  PD (RE - Right Eye, mm)
+                </label>
+                <input
+                  id="pdOD"
+                  type="number"
+                  placeholder="e.g., 31"
+                  className="w-full border p-2 rounded"
+                  value={formData.pdOD || ''}
+                  onChange={handleChange}
+                />
               </div>
               <div>
-                <label htmlFor="pdOS" className="block">PD (LE - Left Eye, mm)</label>
-                <input id="pdOS" type="number" placeholder="e.g., 31" className="w-full border p-2 rounded" value={formData.pdOS || ''} onChange={handleChange} />
+                <label htmlFor="pdOS" className="block">
+                  PD (LE - Left Eye, mm)
+                </label>
+                <input
+                  id="pdOS"
+                  type="number"
+                  placeholder="e.g., 31"
+                  className="w-full border p-2 rounded"
+                  value={formData.pdOS || ''}
+                  onChange={handleChange}
+                />
               </div>
             </div>
           </div>
         </section>
 
         <div className="mt-10 flex gap-2">
-          <Button variant='secondary' onClick={() => setActiveComponent('medical-history')}>Prev</Button>
-          <Button variant='primary' onClick={() => setActiveComponent('otherExams')}>Next</Button>
+          <Button variant="secondary" onClick={() => setActiveComponent('medical-history')}>
+            Prev
+          </Button>
+          <Button variant="primary" onClick={() => setActiveComponent('otherExams')}>
+            Next
+          </Button>
         </div>
       </form>
     </div>

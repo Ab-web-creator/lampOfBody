@@ -7,34 +7,51 @@ import VisualAcuity from './components/VisualAcuity';
 import OtherCheckups from './components/OtherCheckups';
 
 interface PersonalInfoData {
-  name: string;
+  name?: string;
   age?: number;
-  // Add more fields as needed
+  email?: string;
+  phone?: string;
+  dob?: string;
 }
 
-
 interface MedicalHistoryData {
-  [key: string]: string | string[] | undefined;  // Generic structure
+  [key: string]: string | string[] | undefined;
 }
 
 interface VisualAcuityData {
-  leftEye: number;
-  rightEye: number;
-  // Add more fields as needed
+  visualAcuityOD?: string;
+  visualAcuityOS?: string;
+  correctedVisualAcuityOD?: string;
+  correctedVisualAcuityOS?: string;
+  refractionOD_sphere?: string;
+  refractionOD_cylinder?: string;
+  refractionOD_axis?: string;
+  refractionOS_sphere?: string;
+  refractionOS_cylinder?: string;
+  refractionOS_axis?: string;
+  pdTotal?: string;
+  pdOD?: string;
+  pdOS?: string;
 }
 
 interface OtherExamsData {
-  bloodPressure: string;
-  heartRate: string;
-  // Add more fields as needed
+  pupilResponseOD?: string;
+  pupilResponseOS?: string;
+  ocularMotilityOD?: string;
+  ocularMotilityOS?: string;
+  externalEyeOD?: string;
+  externalEyeOS?: string;
+  visualFieldOD?: string;
+  visualFieldOS?: string;
+  intraocularPressureOD?: string;
+  intraocularPressureOS?: string;
 }
 
-
 const PageNewPatient = () => {
-  const [personalInfo, setPersonalInfo] = useState({});
-  const [medicalHistory, setMedicalHistory] = useState({});
-  const [visualAcuity, setVisualAcuity] = useState({});
-  const [otherExams, setOtherExams] = useState({});
+  const [personalInfo, setPersonalInfo] = useState<PersonalInfoData>({});
+  const [medicalHistory, setMedicalHistory] = useState<MedicalHistoryData>({});
+  const [visualAcuity, setVisualAcuity] = useState<VisualAcuityData>({});
+  const [otherExams, setOtherExams] = useState<OtherExamsData>({});
 
   const [activeComponent, setActiveComponent] = useState('personal-info');
 
@@ -42,20 +59,18 @@ const PageNewPatient = () => {
   const handlePersonalInfoChange = (data: PersonalInfoData) => {
     setPersonalInfo(data);
   };
-  
+
   const handleMedicalHistoryChange = (data: MedicalHistoryData) => {
     setMedicalHistory(data);
   };
-  
+
   const handleVisualAcuityChange = (data: VisualAcuityData) => {
     setVisualAcuity(data);
   };
-  
+
   const handleOtherExamsChange = (data: OtherExamsData) => {
     setOtherExams(data);
   };
-  
-
 
   const renderContent = () => {
     switch (activeComponent) {
@@ -95,7 +110,6 @@ const PageNewPatient = () => {
         return null;
     }
   };
-  
 
   return (
     <div className="flex w-full">

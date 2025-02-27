@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from 'react';
 import Button from '@/components/ui/button/Button';
 
@@ -28,9 +26,9 @@ const OtherCheckups: React.FC<OtherCheckupsProps> = ({ setActiveComponent, data,
   }, [data]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, value } = e.target;
-    setFormData(prev => ({ ...prev, [id]: value }));
-    onChange({ [id]: value });
+          const { id, value } = e.target;
+      setFormData((prev) => ({ ...prev, [id]: value }));
+      onChange({ [id]: value });
   };
 
   return (

@@ -107,5 +107,4 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ setActiveComponent, data = 
   );
 };
 
-
 export default PersonalInfo;
