@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import PersonalInfo from './components/PersonalInfo';
 import MedicalHistory from './components/MedicalHistory';
-import InitialExams from './components/InitialExams';
+import VisualAcuity from './components/VisualAcuity';
+import OtherCheckups from './components/OtherCheckups';
  
 
 interface PageNewPatientProps {
@@ -11,16 +12,19 @@ interface PageNewPatientProps {
 }
 
 const PageNewPatient: React.FC<PageNewPatientProps> = ({ children }) => {
-  const [activeComponent, setActiveComponent] = useState('personal');
+
+  const [activeComponent, setActiveComponent] = useState('personal-info');
 
   const renderContent = () => {
     switch (activeComponent) {
-      case 'personal':
-        return <PersonalInfo />;
-      case 'medical':
-        return <MedicalHistory />;
+      case 'personal-info':
+        return <PersonalInfo setActiveComponent={setActiveComponent} />;
+      case 'medical-history':
+        return <MedicalHistory setActiveComponent={setActiveComponent} />;
       case 'exams':
-        return <InitialExams />;
+        return <VisualAcuity  setActiveComponent={setActiveComponent} />;
+      case 'otherExams':
+        return <OtherCheckups setActiveComponent={setActiveComponent} />;
       default:
         return children;
     }
@@ -32,9 +36,9 @@ const PageNewPatient: React.FC<PageNewPatientProps> = ({ children }) => {
         <ul className="mt-10 space-y-4">
           <li>
             <button
-              onClick={() => setActiveComponent('personal')}
+              onClick={() => setActiveComponent('personal-info')}
               className={`w-full text-left px-2 text-gray-700 hover:text-blue-600 ${
-                activeComponent === 'personal' ? '!text-blue-600 font-bold' : ''
+                activeComponent === 'personal-info' ? '!text-blue-600 font-bold' : ''
               }`}
             >
               Personal Info
@@ -42,9 +46,9 @@ const PageNewPatient: React.FC<PageNewPatientProps> = ({ children }) => {
           </li>
           <li>
             <button
-              onClick={() => setActiveComponent('medical')}
+              onClick={() => setActiveComponent('medical-history')}
               className={`w-full text-left px-2 text-gray-700 hover:text-blue-600 ${
-                activeComponent === 'medical' ? '!text-blue-600 font-bold' : ''
+                activeComponent === 'medical-history' ? '!text-blue-600 font-bold' : ''
               }`}
             >
               Medical History
@@ -57,7 +61,17 @@ const PageNewPatient: React.FC<PageNewPatientProps> = ({ children }) => {
                 activeComponent === 'exams' ? '!text-blue-600 font-bold' : ''
               }`}
             >
-              Initial Exams
+              Visual Acuity
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => setActiveComponent('otherExams')}
+              className={`w-full text-left px-2 text-gray-700 hover:text-blue-600 ${
+                activeComponent === 'otherExams' ? '!text-blue-600 font-bold' : ''
+              }`}
+            >
+              Other Checkups
             </button>
           </li>
     
