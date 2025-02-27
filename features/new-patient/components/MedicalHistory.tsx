@@ -23,7 +23,7 @@ const MedicalHistory: React.FC<MedicalHistoryProps> = ({ setActiveComponent }) =
           onClick={() => setActiveComponent('personal-info')} 
           >Prev</Button>
           <Button variant='primary'  
-          onClick={() => setActiveComponent('exams')} 
+          onClick={() => setActiveComponent('visual-acuity')} 
           >Next</Button>
       </div>
 

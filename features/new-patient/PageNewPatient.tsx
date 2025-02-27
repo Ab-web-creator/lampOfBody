@@ -21,7 +21,7 @@ const PageNewPatient: React.FC<PageNewPatientProps> = ({ children }) => {
         return <PersonalInfo setActiveComponent={setActiveComponent} />;
       case 'medical-history':
         return <MedicalHistory setActiveComponent={setActiveComponent} />;
-      case 'exams':
+      case 'visual-acuity':
         return <VisualAcuity  setActiveComponent={setActiveComponent} />;
       case 'otherExams':
         return <OtherCheckups setActiveComponent={setActiveComponent} />;
@@ -56,9 +56,9 @@ const PageNewPatient: React.FC<PageNewPatientProps> = ({ children }) => {
           </li>
           <li>
             <button
-              onClick={() => setActiveComponent('exams')}
+              onClick={() => setActiveComponent('visual-acuity')}
               className={`w-full text-left px-2 text-gray-700 hover:text-blue-600 ${
-                activeComponent === 'exams' ? '!text-blue-600 font-bold' : ''
+                activeComponent === 'visual-acuity' ? '!text-blue-600 font-bold' : ''
               }`}
             >
               Visual Acuity

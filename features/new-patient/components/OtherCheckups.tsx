@@ -126,7 +126,7 @@ const OtherCheckups: React.FC<OtherCheckupsProps> = ({ setActiveComponent }) => 
 
       <div className="mt-10 flex gap-2">
           <Button variant='secondary'
-           onClick={() => setActiveComponent('exams')}
+           onClick={() => setActiveComponent('visual-acuity')}
           >Prev</Button>
           <Button variant='primary'>Send</Button>
       </div>
