@@ -6,14 +6,14 @@
           "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fm214%2FDocuments%2Fgithub_projects%2FlampOfBody%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f0497603d008a1d309454a0815ffbca588bf960b7%22%2C%22syncKeylessConfigAction%22%5D%2C%5B%227fb4cf021047b9596e48f1cc1a41e0558ce05c5cf5%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227fbe0ffbfdef6c3f9637dd190f5b37147a4e9bee9e%22%2C%22deleteKeylessAction%22%5D%5D%5D%5D&__client_imported__=!",
           "async": false
         },
-        "app/(main)/appointments/page": {
+        "app/(main)/new-patient/page": {
           "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fm214%2FDocuments%2Fgithub_projects%2FlampOfBody%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f0497603d008a1d309454a0815ffbca588bf960b7%22%2C%22syncKeylessConfigAction%22%5D%2C%5B%227fb4cf021047b9596e48f1cc1a41e0558ce05c5cf5%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227fbe0ffbfdef6c3f9637dd190f5b37147a4e9bee9e%22%2C%22deleteKeylessAction%22%5D%5D%5D%5D&__client_imported__=!",
           "async": false
         }
       },
       "layer": {
         "app/(main)/page": "rsc",
-        "app/(main)/appointments/page": "rsc"
+        "app/(main)/new-patient/page": "rsc"
       }
     },
     "7fb4cf021047b9596e48f1cc1a41e0558ce05c5cf5": {
@@ -22,14 +22,14 @@
           "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fm214%2FDocuments%2Fgithub_projects%2FlampOfBody%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f0497603d008a1d309454a0815ffbca588bf960b7%22%2C%22syncKeylessConfigAction%22%5D%2C%5B%227fb4cf021047b9596e48f1cc1a41e0558ce05c5cf5%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227fbe0ffbfdef6c3f9637dd190f5b37147a4e9bee9e%22%2C%22deleteKeylessAction%22%5D%5D%5D%5D&__client_imported__=!",
           "async": false
         },
-        "app/(main)/appointments/page": {
+        "app/(main)/new-patient/page": {
           "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fm214%2FDocuments%2Fgithub_projects%2FlampOfBody%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f0497603d008a1d309454a0815ffbca588bf960b7%22%2C%22syncKeylessConfigAction%22%5D%2C%5B%227fb4cf021047b9596e48f1cc1a41e0558ce05c5cf5%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227fbe0ffbfdef6c3f9637dd190f5b37147a4e9bee9e%22%2C%22deleteKeylessAction%22%5D%5D%5D%5D&__client_imported__=!",
           "async": false
         }
       },
       "layer": {
         "app/(main)/page": "rsc",
-        "app/(main)/appointments/page": "rsc"
+        "app/(main)/new-patient/page": "rsc"
       }
     },
     "7fbe0ffbfdef6c3f9637dd190f5b37147a4e9bee9e": {
@@ -38,14 +38,14 @@
           "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fm214%2FDocuments%2Fgithub_projects%2FlampOfBody%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f0497603d008a1d309454a0815ffbca588bf960b7%22%2C%22syncKeylessConfigAction%22%5D%2C%5B%227fb4cf021047b9596e48f1cc1a41e0558ce05c5cf5%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227fbe0ffbfdef6c3f9637dd190f5b37147a4e9bee9e%22%2C%22deleteKeylessAction%22%5D%5D%5D%5D&__client_imported__=!",
           "async": false
         },
-        "app/(main)/appointments/page": {
+        "app/(main)/new-patient/page": {
           "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fm214%2FDocuments%2Fgithub_projects%2FlampOfBody%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fkeyless-actions.js%22%2C%5B%5B%227f0497603d008a1d309454a0815ffbca588bf960b7%22%2C%22syncKeylessConfigAction%22%5D%2C%5B%227fb4cf021047b9596e48f1cc1a41e0558ce05c5cf5%22%2C%22createOrReadKeylessAction%22%5D%2C%5B%227fbe0ffbfdef6c3f9637dd190f5b37147a4e9bee9e%22%2C%22deleteKeylessAction%22%5D%5D%5D%5D&__client_imported__=!",
           "async": false
         }
       },
       "layer": {
         "app/(main)/page": "rsc",
-        "app/(main)/appointments/page": "rsc"
+        "app/(main)/new-patient/page": "rsc"
       }
     },
     "7f900bd4fcefacc4f26a4101d8c0628b0861660681": {
@@ -54,14 +54,14 @@
           "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fm214%2FDocuments%2Fgithub_projects%2FlampOfBody%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227f900bd4fcefacc4f26a4101d8c0628b0861660681%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         },
-        "app/(main)/appointments/page": {
+        "app/(main)/new-patient/page": {
           "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fm214%2FDocuments%2Fgithub_projects%2FlampOfBody%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%5B%227f900bd4fcefacc4f26a4101d8c0628b0861660681%22%2C%22invalidateCacheAction%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
       "layer": {
         "app/(main)/page": "action-browser",
-        "app/(main)/appointments/page": "action-browser"
+        "app/(main)/new-patient/page": "action-browser"
       }
     }
   },

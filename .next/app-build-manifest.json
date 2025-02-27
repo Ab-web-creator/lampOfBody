@@ -16,10 +16,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(main)/page.js"
     ],
-    "/(main)/appointments/page": [
+    "/(main)/new-patient/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(main)/appointments/page.js"
+      "static/chunks/app/(main)/new-patient/page.js"
     ]
   }
 }

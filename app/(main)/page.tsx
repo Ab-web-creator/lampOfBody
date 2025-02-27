@@ -1,8 +1,11 @@
-import {PageAdmissions} from "@/features/home/PageAdmissions";
+import {PatientRecords} from "@/features/home/PatientRecords";
 
 const Home = () => {
   return (
-    <PageAdmissions />
+    <section className="pt-20">
+
+    <PatientRecords />
+    </section>
   );
 }
 

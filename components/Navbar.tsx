@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
 
   return (
     <section 
-      className="fixed top-0 left-0 w-full z-50 mb-5 border-b bg-blue-100 text-blue-800 font-bold"
+      className="fixed top-0 left-0 w-full z-50 mb-5 border-b bg-blue-50 text-blue-500 font-bold"
       onClick={closeDropdown}
     >
       <nav className="max-w-[1200px] mx-auto flex gap-5 justify-between px-4 py-2">
@@ -32,18 +32,32 @@ const Navbar: React.FC = () => {
           <Image
             src="/images/logo-sun.png"  
             alt="Logo"
-            width={40}  
-            height={40}  
-            className="object-contain min-w-[40px] h-auto px-2 flex-shrink-0" 
+            width={100}  
+            height={30}  
+            className="object-contain min-w-[40px] h-auto flex-shrink-0" 
           />
         </div>
 
         <div className="w-full flex gap-5 justify-center [&>*]:px-2">
+
+        <Link
+            href="/appointments"
+            className={`relative group px-3 py-1 transition-all duration-300 ${
+              pathname === "/appointments" ? "text-blue-500 font-bold" : "text-blue-400"
+            }`}
+          >
+            Appointments
+            <span
+              className={`absolute bottom-0 left-0 w-full h-[2px] bg-blue-500 transition-all duration-300 transform rounded-full ${
+                pathname === "/appointments" ? "scale-x-100" : "scale-x-0"
+              }`}
+            ></span>
+          </Link>
        
           <Link
             href="/"
             className={`relative   group px-3 py-1 transition-all duration-300 ${
-              pathname === "/" ? "text-blue-800 font-bold" : "text-blue-400"
+              pathname === "/" ? "text-blue-500 font-bold" : "text-blue-400"
             }`}
           >
             Patients
@@ -54,31 +68,19 @@ const Navbar: React.FC = () => {
             ></span>
           </Link>
       
-          <Link
-            href="/appointments"
-            className={`relative group px-3 py-1 transition-all duration-300 ${
-              pathname === "/appointments" ? "text-blue-800 font-bold" : "text-blue-400"
-            }`}
-          >
-            Appointments
-            <span
-              className={`absolute bottom-0 left-0 w-full h-[2px] bg-blue-500 transition-all duration-300 transform rounded-full ${
-                pathname === "/appointments" ? "scale-x-100" : "scale-x-0"
-              }`}
-            ></span>
-          </Link>
+     
         
     
 
  
 
           {isSignedIn && (
-            <>
+            <div className="flex items-baseline gap-5">
             <p className="text-blue-400">|</p>
             <Link
               href="/profile"
               className={`relative group px-3 py-1 transition-all duration-300 ${
-                pathname === "/profile" ? "text-blue-800 font-bold" : "text-blue-400"
+                pathname === "/profile" ? "text-blue-500 font-bold" : "text-blue-400"
               }`}
             >
               Tasks
@@ -88,15 +90,16 @@ const Navbar: React.FC = () => {
                 }`}
               ></span>
             </Link>
-            </>
+            </div>
           )}
         </div>
         </div>
 
         <div className="relative w-fit flex items-center">
           {isSignedIn ? (
-            <div onClick={(e) => e.stopPropagation()}>
-              <Button variant="primary" className="!bg-blue-300 hover:!bg-blue-500 !p-2 !rounded-full focus:ring-white focus:ring-offset-blue-700"
+            <div onClick={(e) => e.stopPropagation()} className="flex gap-2">
+              
+              <Button variant="primary" className="!bg-blue-300 hover:!bg-blue-500 !p-2 !rounded-full focus:ring-white focus:ring-offset-blue-700 "
                onClick={toggleDropdown}
                >
                 <svg
@@ -114,7 +117,7 @@ const Navbar: React.FC = () => {
               </Button>
 
               {showDropdown && (
-                <div className="absolute right-0 mt-5 w-48 bg-white rounded-md shadow-lg py-1 text-gray-500 z-10">
+                <div className="absolute font-normal right-0 mt-5 w-48 bg-white rounded-md shadow-lg py-1 text-gray-500 z-10">
                   <Link
                     href="/profile"
                     className="block px-4 py-2 hover:bg-blue-200"
