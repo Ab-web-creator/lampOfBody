@@ -176,7 +176,7 @@ const PatientRecordsTable = () => {
  
   
   const handleNewPatientClick = () => {
-    router.push('/new-patient'); // Navigate to the new-patient page
+    router.push('/new-patient');  
   }; 
 
   return (

@@ -1,1 +1,47 @@
-node_modules
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Next.js build and output
+.next/
+out/
+dist/
+
+# Environment variables
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Log files
+logs
+*.log
+yarn.lock
+pnpm-lock.yaml
+package-lock.json
+
+# TypeScript build output
+*.tsbuildinfo
+
+# Editor settings
+.vscode/
+.idea/
+.DS_Store
+
+# Storybook build files (if using Storybook)
+.storybook-out/
+
+# Tailwind CSS cache
+.tailwind/
+
+# Next.js cache
+.next/cache/
+
+# Local storage (if using turbo or other tools)
+turbo/
+
+# Next.js build and cache
+.next/
