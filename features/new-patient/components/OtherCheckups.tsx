@@ -14,10 +14,12 @@ const OtherCheckups: React.FC<OtherCheckupsProps> = ({ setActiveComponent, data,
     pupilResponseOS: data.pupilResponseOS || '',
     ocularMotilityOD: data.ocularMotilityOD || '',
     ocularMotilityOS: data.ocularMotilityOS || '',
+    externalEyeOD: data.externalEyeOD || '', // Added for right eye
+    externalEyeOS: data.externalEyeOS || '', // Added for left eye
     visualFieldOD: data.visualFieldOD || '',
     visualFieldOS: data.visualFieldOS || '',
     intraocularPressureOD: data.intraocularPressureOD || '',
-    intraocularPressureOS: data.intraocularPressureOS || ''
+    intraocularPressureOS: data.intraocularPressureOS || '',
   });
 
   // Sync formData with incoming data prop
@@ -27,10 +29,12 @@ const OtherCheckups: React.FC<OtherCheckupsProps> = ({ setActiveComponent, data,
       pupilResponseOS: data.pupilResponseOS || '',
       ocularMotilityOD: data.ocularMotilityOD || '',
       ocularMotilityOS: data.ocularMotilityOS || '',
+      externalEyeOD: data.externalEyeOD || '', // Added for right eye
+      externalEyeOS: data.externalEyeOS || '', // Added for left eye
       visualFieldOD: data.visualFieldOD || '',
       visualFieldOS: data.visualFieldOS || '',
       intraocularPressureOD: data.intraocularPressureOD || '',
-      intraocularPressureOS: data.intraocularPressureOS || ''
+      intraocularPressureOS: data.intraocularPressureOS || '',
     });
   }, [data]);
 
@@ -97,6 +101,30 @@ const OtherCheckups: React.FC<OtherCheckupsProps> = ({ setActiveComponent, data,
                   placeholder="e.g., Full, Limited"
                   className="w-full border p-2 rounded"
                   value={formData.ocularMotilityOS || ''}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+              <div>
+                <label htmlFor="externalEyeOD" className="block">External Eye Exam (RE - Right Eye)</label>
+                <input
+                  id="externalEyeOD"
+                  type="text"
+                  placeholder="e.g., Normal, Redness"
+                  className="w-full border p-2 rounded"
+                  value={formData.externalEyeOD || ''}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="externalEyeOS" className="block">External Eye Exam (LE - Left Eye)</label>
+                <input
+                  id="externalEyeOS"
+                  type="text"
+                  placeholder="e.g., Normal, Redness"
+                  className="w-full border p-2 rounded"
+                  value={formData.externalEyeOS || ''}
                   onChange={handleChange}
                 />
               </div>
