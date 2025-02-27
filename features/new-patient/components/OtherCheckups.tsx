@@ -1,42 +1,56 @@
 import React, { useState, useEffect } from 'react';
 import Button from '@/components/ui/button/Button';
+import { OtherExamsData } from '../../types/types';
 
 interface OtherCheckupsProps {
   setActiveComponent: (component: string) => void;
-  data: {
-    pupilResponseOD?: string;
-    pupilResponseOS?: string;
-    ocularMotilityOD?: string;
-    ocularMotilityOS?: string;
-    externalEyeOD?: string;
-    externalEyeOS?: string;
-    visualFieldOD?: string;
-    visualFieldOS?: string;
-    intraocularPressureOD?: string;
-    intraocularPressureOS?: string;
-  };
-  onChange: (data: Partial<OtherCheckupsProps['data']>) => void;
+  data: OtherExamsData;
+  onChange: (data: Partial<OtherExamsData>) => void;
 }
 
 const OtherCheckups: React.FC<OtherCheckupsProps> = ({ setActiveComponent, data, onChange }) => {
-  const [formData, setFormData] = useState(data);
+  const [formData, setFormData] = useState<OtherExamsData>({
+    pupilResponseOD: data.pupilResponseOD || '',
+    pupilResponseOS: data.pupilResponseOS || '',
+    ocularMotilityOD: data.ocularMotilityOD || '',
+    ocularMotilityOS: data.ocularMotilityOS || '',
+    visualFieldOD: data.visualFieldOD || '',
+    visualFieldOS: data.visualFieldOS || '',
+    intraocularPressureOD: data.intraocularPressureOD || '',
+    intraocularPressureOS: data.intraocularPressureOS || ''
+  });
 
+  // Sync formData with incoming data prop
   useEffect(() => {
-    setFormData(data);
+    setFormData({
+      pupilResponseOD: data.pupilResponseOD || '',
+      pupilResponseOS: data.pupilResponseOS || '',
+      ocularMotilityOD: data.ocularMotilityOD || '',
+      ocularMotilityOS: data.ocularMotilityOS || '',
+      visualFieldOD: data.visualFieldOD || '',
+      visualFieldOS: data.visualFieldOS || '',
+      intraocularPressureOD: data.intraocularPressureOD || '',
+      intraocularPressureOS: data.intraocularPressureOS || ''
+    });
   }, [data]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-          const { id, value } = e.target;
-      setFormData((prev) => ({ ...prev, [id]: value }));
-      onChange({ [id]: value });
+    const { id, value } = e.target;
+
+    // Update local state first
+    setFormData((prev) => {
+      const updatedData = { ...prev, [id]: value };
+      // Call onChange after the state update is queued, not during render
+      setTimeout(() => onChange(updatedData), 0); // Defer to next tick
+      return updatedData;
+    });
   };
 
   return (
-    <div className='py-10'>
+    <div className="py-10">
       <h2 className="mb-10">Other Checkups</h2>
       <form>
         <section className="space-y-10">
-          {/* Ocular Health and Function */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-gray-600">Ocular Health and Function</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
@@ -89,7 +103,6 @@ const OtherCheckups: React.FC<OtherCheckupsProps> = ({ setActiveComponent, data,
             </div>
           </div>
 
-          {/* Specialized Tests */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-gray-600">Specialized Tests</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
@@ -144,10 +157,10 @@ const OtherCheckups: React.FC<OtherCheckupsProps> = ({ setActiveComponent, data,
         </section>
 
         <div className="mt-10 flex gap-2">
-          <Button variant='secondary' onClick={() => setActiveComponent('visual-acuity')}>
+          <Button variant="secondary" onClick={() => setActiveComponent('visual-acuity')}>
             Prev
           </Button>
-          <Button variant='primary' type="submit">
+          <Button variant="primary" onClick={() => setActiveComponent('summary-from-register')}>
             Send
           </Button>
         </div>

@@ -8,6 +8,7 @@ interface MedicalHistoryProps {
 }
 
 const MedicalHistory: React.FC<MedicalHistoryProps> = ({ setActiveComponent, data, onChange }) => {
+
   const [conditions, setConditions] = useState(data.conditions || '');
 
   useEffect(() => {
@@ -39,7 +40,8 @@ const MedicalHistory: React.FC<MedicalHistoryProps> = ({ setActiveComponent, dat
           <Button variant='secondary' onClick={() => setActiveComponent('personal-info')}>
             Prev
           </Button>
-          <Button variant='primary' onClick={() => setActiveComponent('visual-acuity')}>
+          <Button variant='primary' 
+          onClick={() => setActiveComponent('visual-acuity')}>
             Next
           </Button>
         </div>

@@ -5,54 +5,17 @@ import PersonalInfo from './components/PersonalInfo';
 import MedicalHistory from './components/MedicalHistory';
 import VisualAcuity from './components/VisualAcuity';
 import OtherCheckups from './components/OtherCheckups';
+import SummaryFromRegister from './components/SummaryFromRegister';  
+import { PersonalInfoData, MedicalHistoryData, VisualAcuityData, OtherExamsData } from '../types/types';
 
-interface PersonalInfoData {
-  name?: string;
-  age?: number;
-  email?: string;
-  phone?: string;
-  dob?: string;
-}
-
-interface MedicalHistoryData {
-  [key: string]: string | string[] | undefined;
-}
-
-interface VisualAcuityData {
-  visualAcuityOD?: string;
-  visualAcuityOS?: string;
-  correctedVisualAcuityOD?: string;
-  correctedVisualAcuityOS?: string;
-  refractionOD_sphere?: string;
-  refractionOD_cylinder?: string;
-  refractionOD_axis?: string;
-  refractionOS_sphere?: string;
-  refractionOS_cylinder?: string;
-  refractionOS_axis?: string;
-  pdTotal?: string;
-  pdOD?: string;
-  pdOS?: string;
-}
-
-interface OtherExamsData {
-  pupilResponseOD?: string;
-  pupilResponseOS?: string;
-  ocularMotilityOD?: string;
-  ocularMotilityOS?: string;
-  externalEyeOD?: string;
-  externalEyeOS?: string;
-  visualFieldOD?: string;
-  visualFieldOS?: string;
-  intraocularPressureOD?: string;
-  intraocularPressureOS?: string;
-}
+ 
+ 
 
 const PageNewPatient = () => {
   const [personalInfo, setPersonalInfo] = useState<PersonalInfoData>({});
   const [medicalHistory, setMedicalHistory] = useState<MedicalHistoryData>({});
   const [visualAcuity, setVisualAcuity] = useState<VisualAcuityData>({});
   const [otherExams, setOtherExams] = useState<OtherExamsData>({});
-
   const [activeComponent, setActiveComponent] = useState('personal-info');
 
   // Callbacks to update states from child components
@@ -106,6 +69,15 @@ const PageNewPatient = () => {
             setActiveComponent={setActiveComponent}
           />
         );
+      case 'summary-from-register':
+        return (
+          <SummaryFromRegister
+            personalInfo={personalInfo}
+            medicalHistory={medicalHistory}
+            visualAcuity={visualAcuity}
+            otherCheckups={otherExams}
+          />
+        );
       default:
         return null;
     }
@@ -154,6 +126,16 @@ const PageNewPatient = () => {
               }`}
             >
               Other Checkups
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => setActiveComponent('summary-from-register')}
+              className={`w-full text-left px-2 text-gray-700 hover:text-blue-600 ${
+                activeComponent === 'summary-from-register' ? '!text-blue-600 font-bold' : ''
+              }`}
+            >
+              Register Summary
             </button>
           </li>
         </ul>

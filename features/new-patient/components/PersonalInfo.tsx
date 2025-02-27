@@ -1,12 +1,15 @@
 import { useRouter } from 'next/navigation';
 import Button from '@/components/ui/button/Button';
 import React, { useEffect, useState } from 'react';
+import { PersonalInfoData } from '../../types/types';
+
 
 interface PersonalInfoProps {
   setActiveComponent: (component: string) => void;
-  data: { name?: string; email?: string; phone?: string; dob?: string };
-  onChange: (data: { name?: string; email?: string; phone?: string; dob?: string }) => void;
+  data: PersonalInfoData; // Use the imported type
+  onChange: (data: PersonalInfoData) => void; // Use the imported type
 }
+
 
 const PersonalInfo: React.FC<PersonalInfoProps> = ({ setActiveComponent, data = {}, onChange }) => {
   const router = useRouter();
