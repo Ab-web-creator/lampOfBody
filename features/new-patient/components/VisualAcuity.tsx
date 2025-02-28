@@ -91,38 +91,6 @@ const VisualAcuity: React.FC<VisualAcuityProps> = ({ setActiveComponent, data, o
             </div>
           </div>
 
-          {/* Corrected Visual Acuity Assessment */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gray-600">Corrected Visual Acuity Assessment</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-              <div>
-                <label htmlFor="correctedVisualAcuityOD" className="block">
-                  RE (OD)
-                </label>
-                <input
-                  id="correctedVisualAcuityOD"
-                  type="text"
-                  placeholder="e.g., 20/20"
-                  className="w-full border p-2 rounded"
-                  value={formData.correctedVisualAcuityOD || ''}
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <label htmlFor="correctedVisualAcuityOS" className="block">
-                  LE (OS)
-                </label>
-                <input
-                  id="correctedVisualAcuityOS"
-                  type="text"
-                  placeholder="e.g., 20/20"
-                  className="w-full border p-2 rounded"
-                  value={formData.correctedVisualAcuityOS || ''}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-          </div>
 
           {/* Refraction Data */}
           <div className="space-y-4">
@@ -267,6 +235,41 @@ const VisualAcuity: React.FC<VisualAcuityProps> = ({ setActiveComponent, data, o
               </div>
             </div>
           </div>
+
+
+          {/* Corrected Visual Acuity Assessment */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-gray-600">Corrected Visual Acuity Assessment</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+              <div>
+                <label htmlFor="correctedVisualAcuityOD" className="block">
+                  RE (OD)
+                </label>
+                <input
+                  id="correctedVisualAcuityOD"
+                  type="text"
+                  placeholder="e.g., 20/20"
+                  className="w-full border p-2 rounded"
+                  value={formData.correctedVisualAcuityOD || ''}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="correctedVisualAcuityOS" className="block">
+                  LE (OS)
+                </label>
+                <input
+                  id="correctedVisualAcuityOS"
+                  type="text"
+                  placeholder="e.g., 20/20"
+                  className="w-full border p-2 rounded"
+                  value={formData.correctedVisualAcuityOS || ''}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+          </div>
+          
         </section>
 
         <div className="mt-10 flex gap-2">

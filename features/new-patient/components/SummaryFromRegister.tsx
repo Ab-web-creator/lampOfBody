@@ -28,25 +28,25 @@ const SummaryFromRegister: React.FC<SummaryProps> = ({
         <div className="grid grid-cols-2 gap-4">
           <div>
             <span className="text-gray-600 font-medium">Name:</span>
-            <p className="text-gray-800 min-h-10 font-bold border border-gray-300 rounded-md p-2">
+            <p className="text-gray-800 min-h-10  border border-gray-300 rounded-md p-2">
               {personalInfo.name || 'N/A'}
             </p>
           </div>
           <div>
             <span className="text-gray-600 font-medium">Email:</span>
-            <p className="text-gray-800 min-h-10 font-bold border border-gray-300 rounded-md p-2">
+            <p className="text-gray-800 min-h-10  border border-gray-300 rounded-md p-2">
               {personalInfo.email || 'N/A'}
             </p>
           </div>
           <div>
             <span className="text-gray-600 font-medium">Phone:</span>
-            <p className="text-gray-800 min-h-10 font-bold border border-gray-300 rounded-md p-2">
+            <p className="text-gray-800 min-h-10  border border-gray-300 rounded-md p-2">
               {personalInfo.phone || 'N/A'}
             </p>
           </div>
           <div>
             <span className="text-gray-600 font-medium">Date of Birth:</span>
-            <p className="text-gray-800 min-h-10 font-bold border border-gray-300 rounded-md p-2">
+            <p className="text-gray-800 min-h-10  border border-gray-300 rounded-md p-2">
               {personalInfo.dob || 'N/A'}
             </p>
           </div>
@@ -58,7 +58,7 @@ const SummaryFromRegister: React.FC<SummaryProps> = ({
         <h3 className="text-xl font-semibold text-gray-400 mb-3">Medical History</h3>
         <div>
           <span className="text-gray-600 font-medium">Conditions:</span>
-          <p className="text-gray-800 font-bold border border-gray-300 rounded-md p-2 mt-1">
+          <p className="text-gray-800 border border-gray-300 rounded-md p-2 mt-1">
             {medicalHistory.conditions || 'None reported'}
           </p>
         </div>
@@ -67,32 +67,56 @@ const SummaryFromRegister: React.FC<SummaryProps> = ({
       {/* Visual Acuity Section */}
       <section className="bg-white p-4 rounded-md">
         <h3 className="text-xl font-semibold text-gray-400 mb-3">Visual Acuity</h3>
-        <div className="grid grid-cols-2 gap-6">
-          <div>
-            <h4 className="font-medium text-gray-600 mb-2">Right Eye (OD)</h4>
-            <p>VA: {visualAcuity.visualAcuityOD || 'N/A'}</p>
-            <p>Corrected: {visualAcuity.correctedVisualAcuityOD || 'N/A'}</p>
-            <p>
-              Refraction:{' '}
-              {visualAcuity.refractionOD_sphere || 'N/A'}{' '}/{' '} 
-              {visualAcuity.refractionOD_cylinder || 'N/A'} x{' '}
-              {visualAcuity.refractionOD_axis || 'N/A'}
-            </p>
+        <div className="space-y-6">
+          <div className="grid grid-cols-2 gap-6">
+            <div className=''>
+              <h4 className="font-medium text-gray-600 mb-2">Right Eye (OD)</h4>
+              <article className='border border-gray-200 py-2 px-4 rounded-md'>
+                <p>VA: {visualAcuity.visualAcuityOD || 'N/A'}</p>
+                <p>Corrected: {visualAcuity.correctedVisualAcuityOD || 'N/A'}</p>
+              </article>
+            </div>
+            <div>
+              <h4 className="font-medium text-gray-600 mb-2">Left Eye (OS)</h4>
+              <article className='border border-gray-200 py-2 px-4 rounded-md'>
+                <p>VA: {visualAcuity.visualAcuityOS || 'N/A'}</p>
+                <p>Corrected: {visualAcuity.correctedVisualAcuityOS || 'N/A'}</p>
+              </article>
+            </div>
           </div>
+
+          {/* Refraction Data */}
           <div>
-            <h4 className="font-medium text-gray-600 mb-2">Left Eye (OS)</h4>
-            <p>VA: {visualAcuity.visualAcuityOS || 'N/A'}</p>
-            <p>Corrected: {visualAcuity.correctedVisualAcuityOS || 'N/A'}</p>
-            <p>
-              Refraction:{' '}
-              {visualAcuity.refractionOS_sphere || 'N/A'}{' '}/{' '} 
-              {visualAcuity.refractionOS_cylinder || 'N/A'} x{' '}
-              {visualAcuity.refractionOS_axis || 'N/A'}
-            </p>
+            <h4 className="font-medium text-gray-600 mb-2">Refraction</h4>
+            <div className="grid grid-cols-2 gap-6">
+              <div>
+              <article className='border border-gray-200 py-2 px-4 rounded-md'>
+                <p>
+                  OD:{' '}
+                  {visualAcuity.refractionOD_sphere || 'N/A'}{' '} {'/'} {' '}
+                  {visualAcuity.refractionOD_cylinder || 'N/A'} x{' '}
+                  {visualAcuity.refractionOD_axis || 'N/A'}
+                </p>
+                </article>
+              </div>
+              <div>
+              <article className='border border-gray-200 py-2 px-4 rounded-md'>
+                <p>
+                  OS:{' '}
+                  {visualAcuity.refractionOS_sphere || 'N/A'}{' '} {'/'} {' '}
+                  {visualAcuity.refractionOS_cylinder || 'N/A'} x{' '}
+                  {visualAcuity.refractionOS_axis || 'N/A'}
+                </p>
+                </article>
+              </div>
+            </div>
           </div>
-          <div className="col-span-2 mt-2">
-            <p>PD Total (mm): {visualAcuity.pdTotal|| 'N/A'}</p>
-            <p>PD OD: {visualAcuity.pdOD || 'N/A'} / PD OS: {visualAcuity.pdOS || 'N/A'}</p>
+
+          {/* Pupillary Distance */}
+          <div className="mt-2 flex gap-10 pl-4">
+            <p>PD Total (mm): {visualAcuity.pdTotal || 'N/A'}</p>
+            <p>PD OD: {visualAcuity.pdOD || 'N/A'}  </p>
+            <p> PD OS: {visualAcuity.pdOS || 'N/A'}</p>
           </div>
         </div>
       </section>
@@ -103,19 +127,23 @@ const SummaryFromRegister: React.FC<SummaryProps> = ({
         <div className="grid grid-cols-2 gap-6">
           <div>
             <h4 className="font-medium text-gray-600 mb-2">Right Eye (OD)</h4>
-            <p>Pupil Response: {safeOtherCheckups.pupilResponseOD || 'N/A'}</p>
-            <p>Ocular Motility: {safeOtherCheckups.ocularMotilityOD || 'N/A'}</p>
-            <p>External Eye: {safeOtherCheckups.externalEyeOD || 'N/A'}</p>
-            <p>Visual Field: {safeOtherCheckups.visualFieldOD || 'N/A'}</p>
-            <p>IOP: {safeOtherCheckups.intraocularPressureOD || 'N/A'}</p>
+            <article className='border border-gray-200 py-2 px-4 rounded-md'>
+              <p>Pupil Response: {safeOtherCheckups.pupilResponseOD || 'N/A'}</p>
+              <p>Ocular Motility: {safeOtherCheckups.ocularMotilityOD || 'N/A'}</p>
+              <p>External Eye: {safeOtherCheckups.externalEyeOD || 'N/A'}</p>
+              <p>Visual Field: {safeOtherCheckups.visualFieldOD || 'N/A'}</p>
+              <p>IOP: {safeOtherCheckups.intraocularPressureOD || 'N/A'}</p>
+            </article>
           </div>
           <div>
             <h4 className="font-medium text-gray-600 mb-2">Left Eye (OS)</h4>
+            <article className='border border-gray-200 py-2 px-4 rounded-md'>
             <p>Pupil Response: {safeOtherCheckups.pupilResponseOS || 'N/A'}</p>
             <p>Ocular Motility: {safeOtherCheckups.ocularMotilityOS || 'N/A'}</p>
             <p>External Eye: {safeOtherCheckups.externalEyeOS || 'N/A'}</p>
             <p>Visual Field: {safeOtherCheckups.visualFieldOS || 'N/A'}</p>
             <p>IOP: {safeOtherCheckups.intraocularPressureOS || 'N/A'}</p>
+            </article>
           </div>
         </div>
       </section>
